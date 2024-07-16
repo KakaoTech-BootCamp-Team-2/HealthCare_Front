@@ -1,13 +1,22 @@
+import * as React from "react";
+import { View, StyleSheet, Text } from "react-native";
 
-import * as React from 'react';
-import { View, Text } from 'react-native';
-
-function MyPageScreen() {
+const MyPageScreen = () => {
   return (
-    <View>
-      <Text>This is the My Page Screen</Text>
+    <View style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <Text>My Page Content</Text>
+      </View>
     </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 export default MyPageScreen;
