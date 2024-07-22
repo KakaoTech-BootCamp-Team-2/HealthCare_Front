@@ -6,7 +6,7 @@ import HomeScreen from "./src/pages/home/home.main";
 import MyPageScreen from "./src/pages/mypage/mypage.main";
 import StatisticsScreen from "./src/pages/statistics/statistics.main";
 import { createStackNavigator } from "@react-navigation/stack";
-import { HeaderView } from "./src/components/Header";
+import { HeaderView } from "./src/components/common/Header";
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createStackNavigator();
