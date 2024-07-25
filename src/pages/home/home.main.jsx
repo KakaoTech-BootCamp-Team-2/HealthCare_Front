@@ -1,6 +1,7 @@
 import * as React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import HomeToday from "./home.today";
+import HomeActivity from "./home.activity";
 import { HeaderView } from "../../components/Header";
 
 const HomeScreen = () => {
@@ -8,7 +9,7 @@ const HomeScreen = () => {
     <View style={{ flex: 1 }}>
       <ScrollView style={styles.wrapper}>
         <HomeToday />
-        {/* <HomeActivity /> */}
+        <HomeActivity /> 
       </ScrollView>
     </View>
   );
