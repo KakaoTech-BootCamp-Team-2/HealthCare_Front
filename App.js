@@ -9,6 +9,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { HeaderView } from "./src/components/Header";
 import LoginScreen from "./src/pages/login/login.main";
 import SignUpScreen from "./src/pages/singup/signup.main";
+
 const BottomTab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
