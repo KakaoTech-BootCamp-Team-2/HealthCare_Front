@@ -39,33 +39,33 @@ const MyPageStack = () => (
 
 export default function App() {
   return (
-    /*<SafeAreaProvider>
+    <SafeAreaProvider>
       <NavigationContainer>
         <BottomTab.Navigator
           screenOptions={{
             tabBarLabelStyle: { fontSize: 12 },
             tabBarItemStyle: { width: 100, },
-            tabBarStyle: { backgroundColor: "powderblue" },
+            tabBarStyle: { backgroundColor: "white" },
           }}
         >
           <BottomTab.Screen
-            name="Home"
+            name="홈!"
             component={HomeStack}
             options={{ header: () => <HeaderView /> }} // HomeScreen에서 별도로 헤더를 설정
           />
           <BottomTab.Screen
-            name="MyPage"
+            name="마이"
             component={MyPageStack}
             options={{ headerShown: false }} // 헤더 숨김
           />
         </BottomTab.Navigator>
       </NavigationContainer>
-    </SafeAreaProvider> */
-    <NavigationContainer>
+    </SafeAreaProvider> 
+    /*<NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen name="Login" component={LoginScreen} />
      <Stack.Screen name="SignUp" component={SignUpScreen} />
     </Stack.Navigator>
-  </NavigationContainer>
+  </NavigationContainer>*/
   );
 }
