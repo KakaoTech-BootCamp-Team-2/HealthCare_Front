@@ -6,9 +6,9 @@ import HomeScreen from "./src/pages/home/home.main";
 import MyPageScreen from "./src/pages/mypage/mypage.main";
 import StatisticsScreen from "./src/pages/statistics/statistics.main";
 import { createStackNavigator } from "@react-navigation/stack";
-import { HeaderView } from "./src/components/Header";
 import LoginScreen from "./src/pages/login/login.main";
 import SignUpScreen from "./src/pages/singup/signup.main";
+import { HeaderView } from "./src/components/common/Header";
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -40,12 +40,12 @@ const MyPageStack = () => (
 
 export default function App() {
   return (
-    /*<SafeAreaProvider>
+    <SafeAreaProvider>
       <NavigationContainer>
         <BottomTab.Navigator
           screenOptions={{
             tabBarLabelStyle: { fontSize: 12 },
-            tabBarItemStyle: { width: 100, },
+            tabBarItemStyle: { width: 100 },
             tabBarStyle: { backgroundColor: "powderblue" },
           }}
         >
@@ -61,12 +61,15 @@ export default function App() {
           />
         </BottomTab.Navigator>
       </NavigationContainer>
-    </SafeAreaProvider> */
-    <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Login" component={LoginScreen} />
-     <Stack.Screen name="SignUp" component={SignUpScreen} />
-    </Stack.Navigator>
-  </NavigationContainer>
+    </SafeAreaProvider>
   );
+}
+
+{
+  /* <NavigationContainer>
+<Stack.Navigator>
+  <Stack.Screen name="Login" component={LoginScreen} />
+  <Stack.Screen name="SignUp" component={SignUpScreen} />
+</Stack.Navigator>
+</NavigationContainer> */
 }
