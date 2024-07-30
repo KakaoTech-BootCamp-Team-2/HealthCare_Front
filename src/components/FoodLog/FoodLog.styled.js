@@ -67,7 +67,38 @@ export const RowContainer = styled.View`
 export const ContentBox = styled.View`
   width: 40%;
   height: 100%;
-  background-color: black;
+  background-color: #404040;
+  padding: 5px;
   flex: 1;
   border-radius: 20px;
+  gap: 50px;
+`;
+
+export const ContentHeader = styled.View`
+  width: 100%;
+  min-height: 30%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const CenterImage = styled.Image`
+  width: 80px;
+  height: 80px;
+`;
+
+export const PlusImage = styled.Image`
+  width: 40px;
+  height: 40px;
+`;
+
+export const PLUSBTN = styled(TouchableOpacity)``;
+
+export const BottomContainer = styled.View``;
+
+export const TimeText = styled.Text`
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  padding: 10px;
 `;
