@@ -1,3 +1,5 @@
+import * as React from "react";
+import { useNavigation } from "@react-navigation/native";
 import * as S from "./FoodLog.styled";
 import MORNING_IMG from "../../../assets/images/morning.png";
 import LUNCH_IMG from "../../../assets/images/lunch.png";
@@ -6,6 +8,8 @@ import DESSERT_IMG from "../../../assets/images/dessert.png";
 import PLUS from "../../../assets/images/plus.png";
 
 export const FoodLog = () => {
+  const navigation = useNavigation();
+
   return (
     <S.Frame>
       <S.TitleWrapper>
@@ -24,7 +28,7 @@ export const FoodLog = () => {
           <S.ContentBox>
             <S.ContentHeader>
               <S.CenterImage source={MORNING_IMG}></S.CenterImage>
-              <S.PLUSBTN>
+              <S.PLUSBTN onPress={() => navigation.navigate("Search")}>
                 <S.CenterImage source={PLUS} />
               </S.PLUSBTN>
             </S.ContentHeader>
@@ -35,7 +39,7 @@ export const FoodLog = () => {
           <S.ContentBox>
             <S.ContentHeader>
               <S.CenterImage source={LUNCH_IMG}></S.CenterImage>
-              <S.PLUSBTN>
+              <S.PLUSBTN onPress={() => navigation.navigate("Search")}>
                 <S.CenterImage source={PLUS} />
               </S.PLUSBTN>
             </S.ContentHeader>
@@ -48,7 +52,7 @@ export const FoodLog = () => {
           <S.ContentBox>
             <S.ContentHeader>
               <S.CenterImage source={DINNER_IMG}></S.CenterImage>
-              <S.PLUSBTN>
+              <S.PLUSBTN onPress={() => navigation.navigate("Search")}>
                 <S.CenterImage source={PLUS} />
               </S.PLUSBTN>
             </S.ContentHeader>
@@ -59,7 +63,7 @@ export const FoodLog = () => {
           <S.ContentBox>
             <S.ContentHeader>
               <S.CenterImage source={DESSERT_IMG}></S.CenterImage>
-              <S.PLUSBTN>
+              <S.PLUSBTN onPress={() => navigation.navigate("Search")}>
                 <S.CenterImage source={PLUS} />
               </S.PLUSBTN>
             </S.ContentHeader>
