@@ -13,6 +13,7 @@ const HomeScreen = () => {
       <ScrollView style={styles.wrapper}>
         <HomeToday />
         <HomeActivity /> 
+        <FoodLog />
       </ScrollView>
     </View>
   );
