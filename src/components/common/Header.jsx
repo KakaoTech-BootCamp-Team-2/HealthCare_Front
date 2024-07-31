@@ -29,6 +29,13 @@ export const HeaderView = () => {
       >
         마이페이지
       </Text>
+      <Text
+        onPress={() => {
+          navigation.navigate("Calendar"); 
+        }}
+      >
+        달력
+      </Text>
     </S.Wrapper>
   );
 };

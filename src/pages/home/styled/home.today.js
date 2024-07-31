@@ -21,6 +21,7 @@ height: 10%;
 margin-top: 10px;
 `
 
+
 export const TitleSubWrapper = styled.View`
   display: flex;
   flex-direction: row;
@@ -241,6 +242,7 @@ justify-content: center;
 align-items:center;
 width: 90%;
 height:25%;
+
 `;
 
 export const BottomWp1 = styled.View`
@@ -331,4 +333,3 @@ export const BottomWp2DetailImage = styled.Image`
 width: 25px;
 height: 25px;
 `
-
