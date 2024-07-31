@@ -6,9 +6,11 @@ import HomeScreen from "./src/pages/home/home.main";
 import MyPageScreen from "./src/pages/mypage/mypage.main";
 import StatisticsScreen from "./src/pages/statistics/statistics.main";
 import { createStackNavigator } from "@react-navigation/stack";
-import { HeaderView } from "./src/components/common/Header";
 import LoginScreen from "./src/pages/login/login.main";
 import SignUpScreen from "./src/pages/singup/signup.main";
+import { HeaderView } from "./src/components/common/Header";
+import Search from "./src/pages/search/Search";
+import FoodDetailScreen from "./src/components/FoodDeatil/FoodDetail";
 import CalendarScreen from "./src/pages/home/home.calender";
 
 const BottomTab = createBottomTabNavigator();
@@ -26,6 +28,14 @@ const HomeStack = () => (
       component={StatisticsScreen}
       options={{ headerShown: false }} // 헤더 숨김
     />
+    <Stack.Screen
+      name="Search"
+      component={Search}
+      options={{ headerShown: false }}
+    />
+    <Stack.Group screenOptions={{ presentation: "modal" }}>
+      <Stack.Screen name="FoodDetail" component={FoodDetailScreen} />
+    </Stack.Group>
   </Stack.Navigator>
 );
 
