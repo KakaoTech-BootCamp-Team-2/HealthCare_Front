@@ -9,6 +9,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "./src/pages/login/login.main";
 import SignUpScreen from "./src/pages/singup/signup.main";
 import { HeaderView } from "./src/components/common/Header";
+import Search from "./src/pages/search/Search";
+import FoodDetailScreen from "./src/components/FoodDeatil/FoodDetail";
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -25,6 +27,14 @@ const HomeStack = () => (
       component={StatisticsScreen}
       options={{ headerShown: false }} // 헤더 숨김
     />
+    <Stack.Screen
+      name="Search"
+      component={Search}
+      options={{ headerShown: false }}
+    />
+    <Stack.Group screenOptions={{ presentation: "modal" }}>
+      <Stack.Screen name="FoodDetail" component={FoodDetailScreen} />
+    </Stack.Group>
   </Stack.Navigator>
 );
 
@@ -38,38 +48,54 @@ const MyPageStack = () => (
   </Stack.Navigator>
 );
 
+const TabNavigator = () => (
+  <BottomTab.Navigator
+    screenOptions={{
+      tabBarLabelStyle: { fontSize: 12 },
+      tabBarItemStyle: { width: 100 },
+      tabBarStyle: { backgroundColor: "powderblue" },
+    }}
+  >
+    <BottomTab.Screen
+      name="홈"
+      component={HomeStack}
+      // options={{ header: () => <HeaderView /> }} // HomeScreen에서 별도로 헤더를 설정
+    />
+    <BottomTab.Screen
+      name="통계"
+      component={StatisticsScreen}
+      options={{ headerShown: false }} // 헤더 숨김
+    />
+    <BottomTab.Screen
+      name="마이페이지"
+      component={MyPageStack}
+      options={{ headerShown: false }} // 헤더 숨김
+    />
+  </BottomTab.Navigator>
+);
+
 export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <BottomTab.Navigator
-          screenOptions={{
-            tabBarLabelStyle: { fontSize: 12 },
-            tabBarItemStyle: { width: 100 },
-            tabBarStyle: { backgroundColor: "powderblue" },
-          }}
-        >
-          <BottomTab.Screen
-            name="Home"
-            component={HomeStack}
-            options={{ header: () => <HeaderView /> }} // HomeScreen에서 별도로 헤더를 설정
-          />
-          <BottomTab.Screen
-            name="MyPage"
-            component={MyPageStack}
+        <Stack.Navigator initialRouteName="Login">
+          {/* <Stack.Screen
+            name="Login"
+            component={LoginScreen}
             options={{ headerShown: false }} // 헤더 숨김
           />
-        </BottomTab.Navigator>
+          <Stack.Screen
+            name="SignUp"
+            component={SignUpScreen}
+            options={{ headerShown: false }} // 헤더 숨김
+          /> */}
+          <Stack.Screen
+            name="Main"
+            component={TabNavigator}
+            options={{ headerShown: false }} // 헤더 숨김
+          />
+        </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
   );
-}
-
-{
-  /* <NavigationContainer>
-<Stack.Navigator>
-  <Stack.Screen name="Login" component={LoginScreen} />
-  <Stack.Screen name="SignUp" component={SignUpScreen} />
-</Stack.Navigator>
-</NavigationContainer> */
 }
