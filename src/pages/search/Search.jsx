@@ -69,17 +69,17 @@ const AddButtonText = styled.Text`
 const DATA = [
   {
     id: "1",
-    name: "김밥천국김밥",
+    name: "김밥",
     calories: "485kcal",
   },
   {
     id: "2",
-    name: "김밥(김밥)",
+    name: "떡볶이",
     calories: "369kcal",
   },
   {
     id: "3",
-    name: "김밥",
+    name: "치킨",
     calories: "31kcal",
   },
 ];
@@ -135,7 +135,13 @@ const Search = () => {
               <ResultText>{item.calories}</ResultText>
             </View>
             <AddButton>
-              <AddButtonText>+</AddButtonText>
+              <AddButtonText
+                onPress={() => {
+                  alert("등록 완료!");
+                }}
+              >
+                +
+              </AddButtonText>
             </AddButton>
           </ResultContainer>
         )}
