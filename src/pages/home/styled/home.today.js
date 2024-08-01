@@ -333,4 +333,3 @@ export const BottomWp2DetailImage = styled.Image`
 width: 25px;
 height: 25px;
 `
-

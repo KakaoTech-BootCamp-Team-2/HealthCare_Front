@@ -5,8 +5,8 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import * as act from '../home/styled/home.activity';
 import fireImg from '../../../assets/images/fireImg.png';
 import exercisecharacter from '../../../assets/images/character1.jpg';
-
 function HomeActivity() {
+  
   const [selectedButton, setSelectedButton] = React.useState(null);
 
   const handleButtonPress = (button) => {

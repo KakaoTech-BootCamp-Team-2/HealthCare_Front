@@ -11,6 +11,7 @@ import SignUpScreen from "./src/pages/singup/signup.main";
 import { HeaderView } from "./src/components/common/Header";
 import Search from "./src/pages/search/Search";
 import FoodDetailScreen from "./src/components/FoodDeatil/FoodDetail";
+import CalendarScreen from "./src/pages/home/home.calender";
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -41,36 +42,42 @@ const HomeStack = () => (
 const MyPageStack = () => (
   <Stack.Navigator>
     <Stack.Screen
-      name="MyPageMain"
+      name="MyPage"
       component={MyPageScreen}
       options={{ headerShown: false }} // 헤더 숨김
     />
   </Stack.Navigator>
 );
 
-const TabNavigator = () => (
+const CalendarStack = () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="Calendar"
+      component={CalendarScreen}
+      options={{ headerShown: false }} // 헤더 숨김
+    />
+  </Stack.Navigator>
+);
+
+const MainTabNavigator = () => (
   <BottomTab.Navigator
     screenOptions={{
       tabBarLabelStyle: { fontSize: 12 },
       tabBarItemStyle: { width: 100 },
-      tabBarStyle: { backgroundColor: "powderblue" },
+      tabBarStyle: { backgroundColor: "white" },
     }}
   >
     <BottomTab.Screen
       name="홈"
       component={HomeStack}
-      // options={{ header: () => <HeaderView /> }} // HomeScreen에서 별도로 헤더를 설정
+      options={{ header: () => <HeaderView /> }} // HomeScreen에서 별도로 헤더를 설정
     />
     <BottomTab.Screen
-      name="통계"
-      component={StatisticsScreen}
-      options={{ headerShown: false }} // 헤더 숨김
-    />
-    <BottomTab.Screen
-      name="마이페이지"
+      name="마이"
       component={MyPageStack}
       options={{ headerShown: false }} // 헤더 숨김
     />
+
   </BottomTab.Navigator>
 );
 
@@ -79,20 +86,17 @@ export default function App() {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login">
-          {/* <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-            options={{ headerShown: false }} // 헤더 숨김
-          />
+   
           <Stack.Screen
-            name="SignUp"
-            component={SignUpScreen}
-            options={{ headerShown: false }} // 헤더 숨김
-          /> */}
+            name="Calendar"
+            component={CalendarScreen}
+            options={{ headerShown: false }} // 달력 화면에서는 헤더를 숨김
+          />
+          
           <Stack.Screen
             name="Main"
-            component={TabNavigator}
-            options={{ headerShown: false }} // 헤더 숨김
+            component={MainTabNavigator}
+            options={{ headerShown: false }} // 메인 탭 네비게이터에서는 헤더를 숨김
           />
         </Stack.Navigator>
       </NavigationContainer>
